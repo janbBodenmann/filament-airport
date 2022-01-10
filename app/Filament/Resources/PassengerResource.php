@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PassengerResource\Pages;
 use App\Filament\Resources\PassengerResource\RelationManagers;
 use App\Models\Passenger;
+use App\Models\PassengerField;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -19,10 +20,12 @@ class PassengerResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $fields[] = Forms\Components\TextInput::make('email')->required();
+
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('email')->required(),
-            ]);
+            ->schema(
+                $fields
+            );
     }
 
     public static function table(Table $table): Table

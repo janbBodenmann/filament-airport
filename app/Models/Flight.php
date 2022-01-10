@@ -16,6 +16,7 @@ class Flight extends Model
         'end_airport_id',
         'departure_date',
         'arrival_date',
+        'ready',
     ];
 
     public function airplane(){

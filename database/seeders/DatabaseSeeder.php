@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Airplane;
+use App\Models\Airport;
+use App\Models\Flight;
 use Filament\Facades\Filament;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Auth\EloquentUserProvider;
@@ -27,10 +30,32 @@ class DatabaseSeeder extends Seeder
         $userModel = $userProvider->getModel();
 
         $user = $userModel::create([
-           'email'=>'admin@bfo.ch',
-           'name'=>'admin@bfo.ch',
-           'password'=>Hash::make('admin@bfo.ch'),
+            'email'=>'admin@bfo.ch',
+            'name'=>'admin@bfo.ch',
+            'password'=>Hash::make('admin@bfo.ch'),
         ]);
 
+        $plane747 = Airplane::create([
+            'typ'=>'747',
+        ]);
+
+        $airportZrh = Airport::create([
+            'short_name'=>'ZRH',
+            'name'=>'Zürich',
+        ]);
+
+        $airportLax = Airport::create([
+            'short_name'=>'LAX',
+            'name'=>'Los Angeles',
+        ]);
+
+        Flight::create([
+            'number'=>'255686',
+            'departure_date'=>now(),
+            'arrival_date'=>now(),
+            'airplane_id'=>$plane747->id,
+            'start_airport_id'=>$airportZrh->id,
+            'end_airport_id'=>$airportLax->id,
+        ]);
     }
 }

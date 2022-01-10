@@ -27,6 +27,7 @@ class FlightResource extends Resource
                 Forms\Components\DateTimePicker::make('arrival_date')->required(),
                 Forms\Components\BelongsToSelect::make('start_airport_id')->relationship('start', 'short_name'),
                 Forms\Components\BelongsToSelect::make('end_airport_id')->relationship('end', 'short_name'),
+                Forms\Components\Toggle::make('is_ready'),
             ]);
     }
 
@@ -38,9 +39,18 @@ class FlightResource extends Resource
                 Tables\Columns\TextColumn::make('airplane.typ'),
                 Tables\Columns\TextColumn::make('start.short_name'),
                 Tables\Columns\TextColumn::make('end.short_name'),
+                Tables\Columns\BooleanColumn::make('ready')
+                    ->action('toggleReady'),
             ])
             ->filters([
 
+            ])->prependActions([
+                Tables\Actions\LinkAction::make('is_ready')
+                    ->action(function (Flight $record) {
+                        $record->is_ready = 1;
+                        $record->save();
+                    })
+                    ->color('danger'),
             ]);
     }
 

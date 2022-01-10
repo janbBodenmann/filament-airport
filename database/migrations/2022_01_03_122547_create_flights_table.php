@@ -16,6 +16,10 @@ class CreateFlightsTable extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->string("number");
+            $table->boolean('ready')->default(false);
+            $table->boolean('boarding')->default(false);
+            $table->boolean('boarding-finished')->default(false);
+            $table->boolean('flying')->default(false);
             $table->dateTime('departure_date');
             $table->dateTime('arrival_date');
             $table->foreignId('airplane_id');

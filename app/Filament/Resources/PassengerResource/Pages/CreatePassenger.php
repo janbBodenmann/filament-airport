@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePassenger extends CreateRecord
 {
     protected static string $resource = PassengerResource::class;
+
+
+    public function beforeCreate(){
+        dd($this->data);
+    }
 }
