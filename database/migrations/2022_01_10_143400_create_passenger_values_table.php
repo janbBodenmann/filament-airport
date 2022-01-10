@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePassengerFieldsTable extends Migration
+class CreatePassengerValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePassengerFieldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('passenger_fields', function (Blueprint $table) {
+        Schema::create('passenger_values', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('short_name');
-            $table->string('typ');
+            $table->foreignId('passenger_id');
+            $table->foreignId('passenger_field_id');
+            $table->text('value');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePassengerFieldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('passenger_fields');
+        Schema::dropIfExists('passenger_values');
     }
 }

@@ -21,7 +21,8 @@ class PassengerFieldResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title'),
+                Forms\Components\TextInput::make('name'),
+                Forms\Components\TextInput::make('short_name'),
                 Forms\Components\Select::make('typ')->options(
                     [
                         'number'=>'Nummer',
@@ -35,8 +36,8 @@ class PassengerFieldResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('typ'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('short_name'),
             ])
             ->filters([
                 //
