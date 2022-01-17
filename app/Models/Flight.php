@@ -30,4 +30,8 @@ class Flight extends Model
     public function end(){
         return $this->belongsTo(Airport::class,'end_airport_id');
     }
+
+    public function passengers(){
+        return $this->belongsToMany(Passenger::class,'passenger_flight');
+    }
 }
