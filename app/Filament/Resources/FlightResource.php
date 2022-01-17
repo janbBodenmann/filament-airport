@@ -44,13 +44,6 @@ class FlightResource extends Resource
             ])
             ->filters([
 
-            ])->prependActions([
-                Tables\Actions\LinkAction::make('is_ready')
-                    ->action(function (Flight $record) {
-                        $record->is_ready = 1;
-                        $record->save();
-                    })
-                    ->color('danger'),
             ]);
     }
 

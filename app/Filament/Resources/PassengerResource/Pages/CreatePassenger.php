@@ -11,6 +11,6 @@ class CreatePassenger extends CreateRecord
 
 
     public function beforeCreate(){
-        dd($this->data);
+        //dd($this->data);
     }
 }
