@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Domain\Passenger\FlightCollisionDetector;
 use App\Filament\Resources\PassengerResource\Pages;
 use App\Filament\Resources\PassengerResource\RelationManagers;
 use App\Models\Passenger;
@@ -33,6 +34,11 @@ class PassengerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('id')->getStateUsing(
+                    function ($record){
+                        return FlightCollisionDetector::run($record);
+                    }
+                ),
             ])
             ->filters([
                 //
