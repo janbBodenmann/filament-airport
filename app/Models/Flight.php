@@ -19,6 +19,11 @@ class Flight extends Model
         'ready',
     ];
 
+    public $dates = [
+        'departure_date',
+        'arrival_date',
+    ];
+
     public function airplane(){
         return $this->belongsTo(Airplane::class);
     }
