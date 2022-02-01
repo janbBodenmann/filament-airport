@@ -12,7 +12,9 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.8"
+        "livewire/livewire": "^2.8",
+        "repat/laravel-job-models": "^0.5.1",
+        "ffhs/filament-package_ffhs_scheduler": "dev-main"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -51,9 +53,18 @@
     },
     "extra": {
         "laravel": {
+            "providers": [
+                "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsSchedulerServiceProvider"
+            ],
             "dont-discover": []
         }
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/ffhs/filament-package_ffhs_scheduler"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a01aa65f25682d6ee551466337daaec",
+    "content-hash": "aaa4a31afe335a65c7dccd66feb19691",
     "packages": [
         {
             "name": "akaunting/laravel-money",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akaunting/laravel-money.git",
-                "reference": "28bc67ac2c8eaab228ca15ce3e827202e4224196"
+                "reference": "eaa684e940e1fa866276409614f65a5b91279238"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akaunting/laravel-money/zipball/28bc67ac2c8eaab228ca15ce3e827202e4224196",
-                "reference": "28bc67ac2c8eaab228ca15ce3e827202e4224196",
+                "url": "https://api.github.com/repos/akaunting/laravel-money/zipball/eaa684e940e1fa866276409614f65a5b91279238",
+                "reference": "eaa684e940e1fa866276409614f65a5b91279238",
                 "shasum": ""
             },
             "require": {
@@ -67,9 +67,9 @@
             ],
             "support": {
                 "issues": "https://github.com/akaunting/laravel-money/issues",
-                "source": "https://github.com/akaunting/laravel-money/tree/2.0.0"
+                "source": "https://github.com/akaunting/laravel-money/tree/2.0.1"
             },
-            "time": "2022-01-18T22:24:58+00:00"
+            "time": "2022-01-31T17:11:27+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -812,6 +812,70 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "ffhs/filament-package_ffhs_scheduler",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/ffhs/filament-package_ffhs_scheduler",
+                "reference": "6f0d12c590a7ffb764a2e9ee71e752fac467c302"
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsSchedulerServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentPackageFfhsScheduler": "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsSchedulerFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ffhs\\FilamentPackageFfhsScheduler\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ffhs\\FilamentPackageFfhsScheduler\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Karlen",
+                    "email": "christoph.karlen@ffhs.ch",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/ffhs/filament-package_ffhs_scheduler",
+            "keywords": [
+                "ffhs",
+                "filament-package_ffhs_scheduler"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "filament/filament",
@@ -3409,6 +3473,58 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "repat/laravel-job-models",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/repat/laravel-job-models.git",
+                "reference": "152020b0ac128631e1722a23450f0040f451904a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/repat/laravel-job-models/zipball/152020b0ac128631e1722a23450f0040f451904a",
+                "reference": "152020b0ac128631e1722a23450f0040f451904a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.7|^6.0|^7.0|^8.0",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Repat\\LaravelJobs\\": "src/Repat/LaravelJobs"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "repat",
+                    "email": "repat@repat.de"
+                }
+            ],
+            "description": "Eloquent Models for the tables job and job_fails as created by artisan queue:table and queue:failed-table",
+            "homepage": "https://repat.de",
+            "keywords": [
+                "artisan",
+                "eloquent",
+                "job",
+                "job_fails",
+                "jobs",
+                "laravel",
+                "model",
+                "queue table"
+            ],
+            "support": {
+                "issues": "https://github.com/repat/laravel-job-models/issues",
+                "source": "https://github.com/repat/laravel-job-models/tree/0.5.1"
+            },
+            "time": "2020-11-10T05:48:29+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -8510,7 +8626,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ffhs/filament-package_ffhs_scheduler": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
