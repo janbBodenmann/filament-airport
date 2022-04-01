@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'de',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Ffhs\FilamentPackageFfhsScheduler\FilamentPackageFfhsSchedulerServiceProvider::class,
+        Ffhs\FilamentPackageFfhsComments\FilamentPackageFfhsCommentsServiceProvider::class,
         /*
          * Application Service Providers...
          */

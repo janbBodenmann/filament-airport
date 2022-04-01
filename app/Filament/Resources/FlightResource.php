@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\FlightResource\Pages;
 use App\Filament\Resources\FlightResource\RelationManagers;
 use App\Models\Flight;
+use Ffhs\FilamentPackageFfhsComments\Resources\CommentsResource\RelationManager\BasicCommentsRelationManager;
+use Ffhs\FilamentPackageFfhsComments\Resources\CommentsResource\RelationManager\CommentsRelationManager;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -50,7 +52,7 @@ class FlightResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BasicCommentsRelationManager::class
         ];
     }
 

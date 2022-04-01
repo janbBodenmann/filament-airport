@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.8",
         "repat/laravel-job-models": "^0.5.1",
-        "ffhs/filament-package_ffhs_scheduler": "dev-main"
+        "ffhs/filament-package_ffhs_scheduler": "dev-main",
+        "ffhs/filament-package_ffhs_comments": "dev-main"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -54,7 +55,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsSchedulerServiceProvider"
+                "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsSchedulerServiceProvider",
+                "Ffhs\\FilamentPackageFfhsScheduler\\FilamentPackageFfhsCommentsServiceProvider"
             ],
             "dont-discover": []
         }
@@ -63,6 +65,10 @@
         {
             "type": "path",
             "url": "packages/ffhs/filament-package_ffhs_scheduler"
+        },
+        {
+            "type": "path",
+            "url": "packages/ffhs/filament-package_ffhs_comments"
         }
     ],
     "config": {

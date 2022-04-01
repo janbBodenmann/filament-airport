@@ -35,4 +35,8 @@ class Flight extends Model
     public function end(){
         return $this->belongsTo(Airport::class,'end_airport_id');
     }
+
+    public function comments(){
+        return $this->morphMany(config('comments.comment_class'), 'commentable');
+    }
 }
