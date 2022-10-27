@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Ffhs\FilamentPackageFfhsScheduler\FilamentPackageFfhsSchedulerServiceProvider::class,
+        // Ffhs\FilamentPackageFfhsScheduler\FilamentPackageFfhsSchedulerServiceProvider::class,
         Ffhs\FilamentPackageFfhsComments\FilamentPackageFfhsCommentsServiceProvider::class,
         /*
          * Application Service Providers...

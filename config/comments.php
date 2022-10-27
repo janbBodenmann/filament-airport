@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\User;
+use Ffhs\FilamentPackageFfhsComments\Comments\Providers\TopicProvider;
+use Ffhs\FilamentPackageFfhsComments\Resources\CommentsResource;
 
 return [
 
@@ -16,5 +18,17 @@ return [
      * Laravel authentication configuration will be used.
      */
     'user_model' => User::class,
+
+    /*
+     * Here you can override the resources used for the general inbox
+     */
+    'resources_list' => [
+        CommentsResource::class,
+    ],
+
+    /**
+     * Here you can define how the topic looks like on new comments (dropdown or free-text)
+     */
+    'topic_provider' => TopicProvider::class,
 
 ];

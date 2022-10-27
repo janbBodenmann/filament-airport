@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             //$table->string('commentable_type')->nullable();
             //$table->integer('commentable_id')->nullable();
             $table->text('comment');
+            $table->string('topic')->nullable();
             $table->string('topic_key')->nullable();
             $table->boolean('is_approved')->default(false);
             $table->json('has_read')->nullable();

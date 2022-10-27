@@ -24,9 +24,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Filament::registerNavigationGroups([
-            'Comments',
-            'Scheduler',
+        setlocale(LC_TIME, 'de_DE.utf8');
+
+        Filament::registerStyles([
+            asset('css/app.css'),
         ]);
+
+        Filament::serving(function() {
+            Filament::registerNavigationGroups([
+                'Comments',
+                'Scheduler',
+            ]);
+        });
     }
 }
