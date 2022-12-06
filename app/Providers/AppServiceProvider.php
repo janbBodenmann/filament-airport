@@ -32,7 +32,6 @@ class AppServiceProvider extends ServiceProvider
 
         Filament::serving(function() {
             Filament::registerNavigationGroups([
-                'Comments',
                 'Scheduler',
             ]);
         });

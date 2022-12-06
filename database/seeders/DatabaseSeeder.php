@@ -35,27 +35,27 @@ class DatabaseSeeder extends Seeder
             'password'=>Hash::make('admin@bfo.ch'),
         ]);
 
-        $plane747 = Airplane::create([
-            'typ'=>'747',
-        ]);
-
-        $airportZrh = Airport::create([
-            'short_name'=>'ZRH',
-            'name'=>'Zürich',
-        ]);
-
-        $airportLax = Airport::create([
-            'short_name'=>'LAX',
-            'name'=>'Los Angeles',
-        ]);
-
-        Flight::create([
-            'number'=>'255686',
-            'departure_date'=>now(),
-            'arrival_date'=>now(),
-            'airplane_id'=>$plane747->id,
-            'start_airport_id'=>$airportZrh->id,
-            'end_airport_id'=>$airportLax->id,
-        ]);
+        //$plane747 = Airplane::create([
+        //    'typ'=>'747',
+        //]);
+        //
+        //$airportZrh = Airport::create([
+        //    'short_name'=>'ZRH',
+        //    'name'=>'Zürich',
+        //]);
+        //
+        //$airportLax = Airport::create([
+        //    'short_name'=>'LAX',
+        //    'name'=>'Los Angeles',
+        //]);
+        //
+        //Flight::create([
+        //    'number'=>'255686',
+        //    'departure_date'=>now(),
+        //    'arrival_date'=>now(),
+        //    'airplane_id'=>$plane747->id,
+        //    'start_airport_id'=>$airportZrh->id,
+        //    'end_airport_id'=>$airportLax->id,
+        //]);
     }
 }

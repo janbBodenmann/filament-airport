@@ -12,8 +12,7 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.8",
-        "ffhs/filament-package_ffhs_comments": "dev-main"
+        "livewire/livewire": "^2.8"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
@@ -53,16 +52,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ffhs\\FilamentPackageFfhsComments\\FilamentPackageFfhsCommentsServiceProvider"
+
             ],
             "dont-discover": []
         }
     },
     "repositories": [
-        {
-            "type": "path",
-            "url": "packages/ffhs/filament-package_ffhs_comments"
-        }
+
     ],
     "config": {
         "optimize-autoloader": true,
