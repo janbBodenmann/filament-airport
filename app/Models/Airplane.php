@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Airplane extends Model
 {
     use HasFactory;
-
     public $fillable = ['typ'];
 }

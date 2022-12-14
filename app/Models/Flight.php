@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Uuid\Type\Integer;
 
 class Flight extends Model
 {
@@ -38,5 +40,9 @@ class Flight extends Model
 
     public function comments(){
         return $this->morphMany(config('comments.comment_class'), 'commentable');
+    }
+
+    public function passengers(){
+        return $this->belongsToMany(Passenger::class,'passenger_flight');
     }
 }

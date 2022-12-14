@@ -23,7 +23,7 @@ class AirplaneResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('typ')->required(),
             ]);
     }
 
@@ -31,7 +31,6 @@ class AirplaneResource extends Resource
     {
         return $table
             ->columns([
-                //
             ])
             ->filters([
                 //
@@ -43,14 +42,14 @@ class AirplaneResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +57,5 @@ class AirplaneResource extends Resource
             'create' => Pages\CreateAirplane::route('/create'),
             'edit' => Pages\EditAirplane::route('/{record}/edit'),
         ];
-    }    
+    }
 }

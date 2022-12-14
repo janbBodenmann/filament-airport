@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Domain\Passenger\FlightCollisionDetector;
 use App\Filament\Resources\PassengerResource\Pages;
 use App\Filament\Resources\PassengerResource\RelationManagers;
 use App\Models\Passenger;
@@ -24,6 +25,7 @@ class PassengerResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\TextInput::make('email')->required(),
             ]);
     }
 
@@ -31,7 +33,12 @@ class PassengerResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('id')->getStateUsing(
+                    function ($record){
+                        return FlightCollisionDetector::run($record);
+                    }
+                ),
             ])
             ->filters([
                 //
@@ -43,14 +50,14 @@ class PassengerResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +65,5 @@ class PassengerResource extends Resource
             'create' => Pages\CreatePassenger::route('/create'),
             'edit' => Pages\EditPassenger::route('/{record}/edit'),
         ];
-    }    
+    }
 }
