@@ -22,56 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /** @var SessionGuard $auth */
-        $auth = Filament::auth();
-
-        /** @var EloquentUserProvider $userProvider */
-        $userProvider = $auth->getProvider();
-
-        $userModel = $userProvider->getModel();
-
-        $user = $userModel::create([
-            'email'=>'admin@bfo.ch',
-            'name'=>'admin@bfo.ch',
-            'password'=>Hash::make('admin@bfo.ch'),
-        ]);
-
-        $plane747 = Airplane::create([
-            'typ'=>'747',
-        ]);
-
-        $airportZrh = Airport::create([
-            'short_name'=>'ZRH',
-            'name'=>'Zürich',
-        ]);
-
-        $airportLax = Airport::create([
-            'short_name'=>'LAX',
-            'name'=>'Los Angeles',
-        ]);
-
-        Flight::create([
-            'number'=>'255686',
-            'departure_date'=>now(),
-            'arrival_date'=>now(),
-            'airplane_id'=>$plane747->id,
-            'start_airport_id'=>$airportZrh->id,
-            'end_airport_id'=>$airportLax->id,
-        ]);
-
-        $urs = Passenger::create([
-            'email'=>'urs',
-        ]);
-        $martin = Passenger::create([
-            'email'=>'martin',
-        ]);
-        $klaus = Passenger::create([
-            'email'=>'klaus',
-        ]);
-
-
-
-
-        //$flight = Flight::first()->passengers()->attach($urs);
+        $this->call(UserSeeder::class);
+        $this->call(FlightSeeder::class);
     }
 }
