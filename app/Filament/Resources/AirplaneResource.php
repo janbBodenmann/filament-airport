@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AirportResource\Pages;
-use App\Filament\Resources\AirportResource\RelationManagers;
-use App\Models\Airport;
+use App\Filament\Resources\AirplaneResource\Pages;
+use App\Filament\Resources\AirplaneResource\RelationManagers;
+use App\Models\Airplane;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AirportResource extends Resource
+class AirplaneResource extends Resource
 {
-    protected static ?string $model = Airport::class;
+    protected static ?string $model = Airplane::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -23,9 +23,7 @@ class AirportResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('short_name')->required(),
-
+                //
             ]);
     }
 
@@ -33,8 +31,7 @@ class AirportResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('short_name'),
+                //
             ])
             ->filters([
                 //
@@ -46,20 +43,20 @@ class AirportResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-
+    
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-
+    
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAirports::route('/'),
-            'create' => Pages\CreateAirport::route('/create'),
-            'edit' => Pages\EditAirport::route('/{record}/edit'),
+            'index' => Pages\ListAirplanes::route('/'),
+            'create' => Pages\CreateAirplane::route('/create'),
+            'edit' => Pages\EditAirplane::route('/{record}/edit'),
         ];
-    }
+    }    
 }
